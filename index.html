@@ -3,10 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="rockPaperScissors.js" defer></script>
 </head>
 <body>
-    <script src="rockPaperScissors.js"></script>
-    
+    <main class="game-card">
+        <header class="game-header">
+            <p class="eyebrow">First to 5 wins</p>
+            <h1>Rock Paper Scissors</h1>
+            <p class="subtitle">Can you outsmart the computer?</p>
+        </header>
+
+        <section class="scoreboard" aria-label="Scoreboard">
+            <div class="score score--player">
+                <span class="score__label">You</span>
+                <span class="score__number" id="player-score">0</span>
+            </div>
+            <span class="scoreboard__divider" aria-hidden="true">VS</span>
+            <div class="score score--computer">
+                <span class="score__label">Computer</span>
+                <span class="score__number" id="computer-score">0</span>
+            </div>
+        </section>
+
+        <section class="battle" aria-label="Weapons chosen this round">
+            <div class="battle__choice">
+                <span class="battle__owner">Your choice</span>
+                <span class="battle__weapon" id="player-choice" aria-label="No choice yet">❔</span>
+                <span class="battle__name" id="player-choice-name">Waiting...</span>
+            </div>
+
+            <span class="battle__versus" aria-hidden="true">⚡</span>
+
+            <div class="battle__choice">
+                <span class="battle__owner">Computer's choice</span>
+                <span class="battle__weapon" id="computer-choice" aria-label="No choice yet">❔</span>
+                <span class="battle__name" id="computer-choice-name">Waiting...</span>
+            </div>
+        </section>
+
+        <section class="result" aria-live="polite" aria-atomic="true">
+            <p id="result-text">Choose your weapon to begin!</p>
+        </section>
+
+        <section class="controls" aria-labelledby="choice-heading">
+            <h2 id="choice-heading">Choose your weapon</h2>
+            <div class="choice-buttons">
+                <button class="choice-button" type="button" data-choice="rock" aria-label="Choose rock">
+                    <span class="choice-button__emoji" aria-hidden="true">🪨</span>
+                    <span class="choice-button__label">Rock</span>
+                </button>
+                <button class="choice-button" type="button" data-choice="paper" aria-label="Choose paper">
+                    <span class="choice-button__emoji" aria-hidden="true">📄</span>
+                    <span class="choice-button__label">Paper</span>
+                </button>
+                <button class="choice-button" type="button" data-choice="scissors" aria-label="Choose scissors">
+                    <span class="choice-button__emoji" aria-hidden="true">✂️</span>
+                    <span class="choice-button__label">Scissors</span>
+                </button>
+            </div>
+        </section>
+
+        <button class="restart-button" id="restart-button" type="button" hidden>Play again</button>
+    </main>
 </body>
 </html>
